@@ -24,34 +24,18 @@
     --K 10
    ```
 
-Example
+数据格式
 ----------
 
-在这个例子中，第一行data_example代表外部轨迹
+数据分为fs_example.txt和tt_example.txt分别是foursquare和twitter的轨迹数据，每一行代表一个用户的轨迹。每一行都是如下格式
 
 ```bash
-user_000001;|163,31.7324327_120.9655657|181,31.7324327_120.9655657|
+101;|3836,963221636|4053,577522790|
 ```
 
-分号前的字符串是用户 ID。轨迹中的时空点用竖线划分。逗号前的元素是时间的ID，逗号后的元素是纬度和经度。
-
-从第二行到最后一行是bin轨迹，其中一个例子是：
-
-```bash
-user_000010;|163,fe4c21d14228bd83d838ee6562332c0b|
-```
-
-与外部轨迹不同，bin 轨迹中的位置bin ID 表示。bin中心的地理坐标可以在**algorithm\RegionCenters**中找到。
-
-`algorithms/output/result` 是得到的结果。 `result` 中有一行，两个字段由 "\t" 分隔。 第一个字段是输入文件的名称。 第二个字段是hit_acc@k。
-
-**其他**
-
-1. **RegionPopularity **给出每个区域的访问日志总数。
+分号前的字符串是用户 ID。轨迹中的时空点用竖线划分。逗号前的元素是时间的ID，逗号后的元素是binId。
 
 REFERENCES
 ==========
-
-[NDSS 2018]  H. Wang, C. Gao, Y. Li, G. Wang, D. Jin, J. Sun, "De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice," in Proc. NDSS, 2018.
 
 [WWW 2016] C. Riederer, Y. Kim, A. Chaintreau, N. Korula, and S. Lattanzi, “Linking users across domains with location data: Theory and validation,” in Proc. WWW, 2016.
